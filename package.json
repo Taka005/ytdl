@@ -1,0 +1,23 @@
+{
+  "name": "ytdl",
+  "version": "1.0.0",
+  "description": "Youtube Movie Downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taka005/ytdl.git"
+  },
+  "author": "Taka005",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taka005/ytdl/issues"
+  },
+  "homepage": "https://github.com/Taka005/ytdl#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.9"
+  }
+}
