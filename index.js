@@ -1,7 +1,5 @@
 const fetch = require("node-fetch");
 
-const ID = "FMEl7qM0Gd4";
-
 const getURL = async(ID)=>{
     const data = await fetch("https://www.youtube.com/youtubei/v1/player",{
         "method": "POST",
@@ -48,7 +46,9 @@ const getURL = async(ID)=>{
     })
     .then(res=>res.json())
     .catch(err=>console.log(err))
-
-    const res = getURL(ID);
-    console.log(res.streamingData.formats[0].url);
 } 
+
+const ID = "FMEl7qM0Gd4";
+
+const res = await getURL(ID);
+console.log(res.streamingData.formats[0].url);
