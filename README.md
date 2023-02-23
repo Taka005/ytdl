@@ -1,2 +1,2 @@
-# ytdl
+# Youtube Downloader
 index.jsのIDに動画のIDを入力しnpm startを実行するとfile.jsonに各種情報が書き込まれます
