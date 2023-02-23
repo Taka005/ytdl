@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const fs = require("fs");
 
 const ID = "FMEl7qM0Gd4";
 
@@ -21,7 +22,26 @@ const getURL = async(ID)=>{
     .then(res=>res.json())
     .catch(err=>console.log(err))
 
-    console.log(data.streamingData.formats[0].url);
+    console.log("取得しました");
+
+    const json = {
+        "id": data.videoDetails.videoId,
+        "title": data.videoDetails.title,
+        "description": data.videoDetails.shortDescription,
+        "length": data.videoDetails.lengthSeconds,
+        "keywords": data.videoDetails.keywords,
+        "thumbnails": data.videoDetails.thumbnail.thumbnails,
+        "data": data.streamingData.formats.map(format=>({
+            "url": format.url,
+            "type": format.mimeType,
+            "width": format.width,
+            "height": format.height,
+            "fps": format.fps,
+            "quality": format.qualityLabel
+        }))
+    }
+
+    fs.writeFileSync("file.json",JSON.stringify(json,null,"    "),"utf8");
 } 
 
 getURL(ID);
