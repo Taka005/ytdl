@@ -12,7 +12,7 @@
     "url": "git+https://github.com/Taka005/ytdl.git"
   },
   "author": "Taka005",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Taka005/ytdl/issues"
   },
